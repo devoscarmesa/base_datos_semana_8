@@ -11,7 +11,7 @@
  Target Server Version : 100414
  File Encoding         : 65001
 
- Date: 09/10/2020 03:14:34
+ Date: 11/10/2020 21:38:13
 */
 
 SET NAMES utf8mb4;
@@ -148,8 +148,7 @@ CREATE TABLE `grupos`  (
   `a_formacion` int(4) NULL DEFAULT NULL COMMENT 'Año de formación',
   `descripcion` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
-  UNIQUE INDEX `uq_ie_grado`(`institucion_id`, `grado`) USING BTREE,
-  UNIQUE INDEX `uq_ie_grado_1`(`institucion_id`, `grado`, `a_formacion`) USING BTREE COMMENT 'Un grado, de una institucion educativa solo puede estar presente una sola vez en un año',
+  UNIQUE INDEX `uq_ie_grado`(`institucion_id`, `grado`, `a_formacion`) USING BTREE COMMENT 'Un grado, de una institucion educativa solo puede estar presente una sola vez en un año	0	\r\nUn grado, de una institucion educativa solo puede estar presente una sola vez en un año',
   CONSTRAINT `fk_ie_grupo` FOREIGN KEY (`institucion_id`) REFERENCES `instituciones_educativas` (`id`) ON DELETE RESTRICT ON UPDATE CASCADE
 ) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
